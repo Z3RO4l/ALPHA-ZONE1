@@ -20,7 +20,7 @@ float media ;
 
     printf(" a media é : %.1f", media);
 
-    printf("\n===============================\n");
+    printf("===============================\n");
 
 return 0 ;
 
