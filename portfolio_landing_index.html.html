@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — Landing Pages & Web Design</title>
+  <meta name="description" content="Portfólio e pacotes de Landing Page, focado em SaaS, Fintech e E‑commerce." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7c3aed;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#071025 0%, #071428 100%); color:#e6eef8; -webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:32px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:#021124;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    main{margin-top:28px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .hero{padding:28px}
+    .kpis{display:flex;gap:12px;margin-top:18px}
+    .kpi{background:var(--glass);padding:10px;border-radius:10px;flex:1;text-align:center}
+    .kpi strong{display:block;font-size:18px}
+
+    /* Packages */
+    .packages{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+    .pkg{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .pkg .meta{max-width:68%}
+    .price{font-weight:700;color:var(--accent)}
+
+    /* Case studies */
+    .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .case{padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent)}
+    .case h4{margin:6px 0 6px}
+    .tag{display:inline-block;font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--muted)}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{background:#031226;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:#eaf4ff}
+    button{background:var(--accent);border:none;padding:12px 14px;border-radius:8px;color:white;font-weight:600;cursor:pointer}
+    button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){.grid{grid-template-columns:1fr} .cases{grid-template-columns:1fr} .brand h1{font-size:20px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">HM</div>
+        <div>
+          <h1>Henrique Moraes — Web Design & Landing Pages</h1>
+          <p class="lead">Pacotes focados em conversão para SaaS, Fintech e E‑commerce — portfólio pronto para enviar a clientes.</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#servicos" style="color:var(--muted);text-decoration:none;margin-right:14px">Serviços</a>
+        <a href="#cases" style="color:var(--muted);text-decoration:none;margin-right:14px">Estudos de Caso</a>
+        <a href="#contato" style="color:var(--muted);text-decoration:none">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="grid">
+        <section class="card hero">
+          <h2>Landing Pages que convertem — pacotes claros, resultados mensuráveis</h2>
+          <p style="color:var(--muted)">Eu crio landing pages otimizadas para conversão, com UX, copy e integrações (CRM, analytics e Ads). Abaixo estão pacotes prontos que você pode oferecer ou usar como base para propostas.</p>
+
+          <div class="kpis">
+            <div class="kpi"><span class="muted">Foco</span><strong>Conversão</strong><small style="color:var(--muted)">CPL / CAC</small></div>
+            <div class="kpi"><span class="muted">Entrega</span><strong>5–30 dias</strong><small style="color:var(--muted)">dependendo do pacote</small></div>
+            <div class="kpi"><span class="muted">Suporte</span><strong>30–60 dias</strong><small style="color:var(--muted)">opcional</small></div>
+          </div>
+
+          <div id="servicos" class="packages">
+            <div class="pkg">
+              <div class="meta">
+                <div style="font-weight:700">Landing Start</div>
+                <div style="color:var(--muted);font-size:13px">Landing básica, ideal para pequenos produtos e testes de mercado.</div>
+              </div>
+              <div class="price">R$ 2.650<br><small style="color:var(--muted);font-weight:500">~US$ 500</small></div>
+            </div>
+
+            <div class="pkg">
+              <div class="meta">
+                <div style="font-weight:700">Landing Conversion</div>
+                <div style="color:var(--muted);font-size:13px">UX + copy orientado a ROI, integrações e tracking configurados.</div>
+              </div>
+              <div class="price">R$ 7.950<br><small style="color:var(--muted);font-weight:500">~US$ 1.500</small></div>
+            </div>
+
+            <div class="pkg">
+              <div class="meta">
+                <div style="font-weight:700">Landing Enterprise</div>
+                <div style="color:var(--muted);font-size:13px">Pesquisa UX, A/B testing, integrações avançadas e suporte estendido.</div>
+              </div>
+              <div class="price">A partir de R$ 26.500<br><small style="color:var(--muted);font-weight:500">~US$ 5.000+</small></div>
+            </div>
+
+          </div>
+
+          <section style="margin-top:18px">
+            <h3 style="margin:0 0 8px">Como eu trabalho</h3>
+            <ol style="color:var(--muted);margin:0 0 0 18px">
+              <li>Brief e objetivos comerciais (CPL, meta de leads)</li>
+              <li>Wireframe + aprovação</li>
+              <li>Design visual + copy</li>
+              <li>Desenvolvimento responsivo + integrações</li>
+              <li>Entrega, monitoramento e otimização (se contratado)</li>
+            </ol>
+          </section>
+        </section>
+
+        <aside class="card" id="contato">
+          <h3 style="margin-top:0">Contato & Proposta Rápida</h3>
+          <p style="color:var(--muted);margin-bottom:8px">Preencha para receber proposta personalizada ou envie um e‑mail.</p>
+          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+            <input type="text" name="nome" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="Seu e‑mail" required />
+            <select name="industria">
+              <option value="saas">SaaS / Software</option>
+              <option value="fintech">Fintech</option>
+              <option value="ecommerce">E‑commerce</option>
+              <option value="health">Health / Healthtech</option>
+              <option value="imobiliaria">Imobiliária</option>
+              <option value="outro">Outro</option>
+            </select>
+            <textarea name="brief" rows="4" placeholder="Breve descrição do projeto (público, objetivo, prazo)"></textarea>
+            <button type="submit">Receber proposta</button>
+            <button type="button" class="secondary" onclick="window.location='mailto:seuemail@exemplo.com'">Enviar e‑mail</button>
+          </form>
+
+          <div style="margin-top:14px;color:var(--muted);font-size:13px">
+            <div><strong>Tempo estimado:</strong> 5–30 dias</div>
+            <div><strong>Pagamento:</strong> 50% adiantado / 50% na entrega (negociável)</div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="card" style="margin-top:16px" id="cases">
+        <h3 style="margin-top:0">Estudos de caso prontos (use como exemplo no portfólio)</h3>
+        <div class="cases">
+          <article class="case">
+            <div class="tag">SaaS</div>
+            <h4>Flux — Plataforma de gestão B2B</h4>
+            <p style="color:var(--muted);font-size:13px">Objetivo: aumentar trials em 30% com nova landing. Solução: headline focada em resultado, prova social, CTA destacado e integração com Hubspot.</p>
+            <small style="color:var(--muted)"><strong>Resultado esperado:</strong> redução do CPL em 28% (estimativa inicial).</small>
+          </article>
+
+          <article class="case">
+            <div class="tag">Fintech</div>
+            <h4>ContaPro — Conta digital para PMEs</h4>
+            <p style="color:var(--muted);font-size:13px">Objetivo: captar leads qualificados para crédito. Solução: formulário em etapas, validação de documentos e integração com CRM.</p>
+            <small style="color:var(--muted)"><strong>Resultado esperado:</strong> aumento de 21% em leads aprovados.</small>
+          </article>
+
+          <article class="case">
+            <div class="tag">E‑commerce</div>
+            <h4>LojaX — Lançamento de coleção premium</h4>
+            <p style="color:var(--muted);font-size:13px">Objetivo: pré‑venda para coleção limitada. Solução: contagem regressiva, provas sociais e integração com gateway de pagamento.</p>
+            <small style="color:var(--muted)"><strong>Resultado esperado:</strong> 15% de conversão na pré‑venda.</small>
+          </article>
+        </div>
+
+        <div style="margin-top:14px;color:var(--muted);font-size:13px">Use esses estudos como templates: adapte números e aprimore com dados reais quando tiver acesso ao analytics do cliente.</div>
+      </section>
+
+      <section class="card" style="margin-top:16px">
+        <h3 style="margin-top:0">Checklist para enviar em propostas</h3>
+        <ul style="color:var(--muted)">
+          <li>Objetivo (ex.: CPL alvo, número de leads)</li>
+          <li>Público alvo e ICP</li>
+          <li>Recursos (integrações, formulários, pagamento)</li>
+          <li>Prazos e entregáveis</li>
+          <li>Termos de pagamento</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>Feito por Henrique Moraes • Use este HTML como base — personalize com imagens, logo e contatos antes de enviar a clientes.</div>
+    </footer>
+  </div>
+</body>
+</html>
