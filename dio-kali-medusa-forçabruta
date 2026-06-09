@@ -1,0 +1,66 @@
+#  Desafio DIO - ATAQUES DE BRUTE FORCE COM KALI LINUX E MEDUSA 
+Este projeto demonstra a execução de ataques de força bruta em um ambiente controlado;
+utilizando Kali Linux e a ferramenta Medusa, conforme proposto no desafio;
+Fazendo uso para testes o metasploitable2 como ambiente controlado.
+-------------------------------------------------------------------------------------------------------
+#OBJETIVO DO DESAFIO
+- Compreender ataques de brute force em diferentes serviços (FTP, Web e SMB);
+- Utilizar Medusa e Hydra para auditoria de segurança;
+- Documentar todo o processo de forma clara;
+- Identificar vulnerabilidades e propor medidas de mitigação.
+------------------------------------------------------------------------------------------------------
+#AMBIENTE CONFIGURADO
+-Máquina Atacante: Kali Linux ;
+-Máquina Alvo: Metasploitable 2;
+-Virtualização: Oracle VirtualBox;
+-Rede: Host-only Adapter;
+-IP da Máquina Alvo: "192.168.56.101"
+-IP da Máquina Atacante:"192.158.56.102"
+--------------------------------------------------------------------------------------------------------
+# ESTRUTURA DO REPOSITÓRIO
+=Criação das Wordlists:
+As wordlists foram criadas com senhas e usuários comuns e senhas previas com base em busca com nmap , encontrados em ambientes vulneráveis como o Metasploitable 2
+
+cat ~/dio-kali-medusa/wordlists/passwords.txt                                     cat ~/dio-kali-medusa/wordlists/users.txt
+conteúdo                                                                                
+msfadmin                                                                                -msfadmin
+admin                                                                                   -admin
+123456                                                                                  -root
+letmain                                                                                 -user
+admin123                                                                                -guest
+qwerty                                                                                  -postgres
+abc123                                                                                  -service
+password123                                                                             -tomcat
+welcome23
+root
+toor
+test
+12345678
+iloveyou
+football
+monkey
+
+#MEDIDAS DE METIGAÇÃO
+Utilizar senhas fortes e complexas (mínimo 12 caracteres);
+Implementar bloqueio de conta após 5 tentativas falhas ;
+Ativar Autenticação de Múltiplos Fatores (MFA/2FA);
+Desabilitar serviços desnecessários ;
+Remover ou desativar contas padrão ou fortalecer elas;
+Manter o sistema sempre atualizado;
+Monitorar logs de autenticação constantemente.
+================================================================================================================================================================================
+##CONSIDERAÇÕES FINAIS 
+Este desafio foi extremamente importante para consolidar o conhecimento sobre ataques de força bruta. Percebi na prática como configurações padrão (como as do Metasploitable) são extremamente vulneráveis a ataques simples.
+Aprendi que o brute force é um ataque "barulhento" e facilmente detectável com boas defesas, mas ainda muito eficaz contra sistemas mal configurados. A documentação e a fase de mitigação são tão importantes quanto a execução do ataque.
+Sou muito grato por estar aprendendo Cibersegurança e por me tornar, a cada desafio, um profissional cada vez melhor e mais preparado para atuar no mercado de Ethical Hacking.
+
+================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
