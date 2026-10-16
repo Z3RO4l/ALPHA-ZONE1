@@ -118,7 +118,7 @@
         <aside class="card" id="contato">
           <h3 style="margin-top:0">Contato & Proposta Rápida</h3>
           <p style="color:var(--muted);margin-bottom:8px">Preencha para receber proposta personalizada ou envie um e‑mail.</p>
-          <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+          <form id="contactForm" novalidate>
             <input type="text" name="nome" placeholder="Seu nome" required />
             <input type="email" name="email" placeholder="Seu e‑mail" required />
             <select name="industria">
@@ -130,9 +130,10 @@
               <option value="outro">Outro</option>
             </select>
             <textarea name="brief" rows="4" placeholder="Breve descrição do projeto (público, objetivo, prazo)"></textarea>
-            <button type="submit">Receber proposta</button>
-            <button type="button" class="secondary" onclick="window.location='mailto:seuemail@exemplo.com'">Enviar e‑mail</button>
+            <button type="submit" id="submitButton">Receber proposta</button>
           </form>
+
+          <div id="formStatus" aria-live="polite" style="margin-top:12px;min-height:20px;color:var(--muted);font-size:13px"></div>
 
           <div style="margin-top:14px;color:var(--muted);font-size:13px">
             <div><strong>Tempo estimado:</strong> 5–30 dias</div>
@@ -186,5 +187,69 @@
       <div>Feito por Henrique Moraes • Use este HTML como base — personalize com imagens, logo e contatos antes de enviar a clientes.</div>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const submitButton = document.getElementById('submitButton');
+
+      if (!form) return;
+
+      const API_ENDPOINT = 'https://formsubmit.co/ajax/seuemail@exemplo.com';
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const nome = (formData.get('nome') || '').toString().trim();
+        const email = (formData.get('email') || '').toString().trim();
+        const industria = (formData.get('industria') || '').toString().trim();
+        const brief = (formData.get('brief') || '').toString().trim();
+
+        if (!nome || !email) {
+          form.reportValidity();
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando...';
+        status.textContent = 'Enviando proposta...';
+        status.style.color = '#94a3b8';
+
+        try {
+          const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              nome,
+              email,
+              industria,
+              brief,
+              _subject: `Proposta para landing page - ${nome}`
+            })
+          });
+
+          if (!response.ok) {
+            throw new Error('Erro ao enviar formulário');
+          }
+
+          status.textContent = 'Proposta enviada com sucesso! Em breve entraremos em contato.';
+          status.style.color = '#7ef0b6';
+          form.reset();
+        } catch (error) {
+          status.textContent = 'Não foi possível enviar no momento. Ajuste o e-mail da API ou use outro endpoint.';
+          status.style.color = '#fca5a5';
+          console.error(error);
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Receber proposta';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
