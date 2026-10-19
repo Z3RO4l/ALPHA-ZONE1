@@ -33,8 +33,4 @@ This project includes a modern responsive landing page and a secure Node.js back
 - `.env.example` — Environment variables template
 - `.gitignore` — Git ignore rules
 
-## How to run
 
-1. Install dependencies:
-```bash
-npm install
